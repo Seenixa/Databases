@@ -1,0 +1,1 @@
+<?php #Új számlanyitáshoz használt űrlap feldolgozásáért felelős file ?>
