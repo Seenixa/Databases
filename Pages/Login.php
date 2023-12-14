@@ -16,9 +16,9 @@
 <body>
   <a href="../index.php">Főoldal</a>
   <form action="../FormHandlers/LoginHandler.php" method="post">
-    <label>Felhasználó Azonosító: <br><input type="text" name="nev" value="" placeholder="Név" maxlength="20" minlength="5"
+    <label>Felhasználó Azonosító: <br><input type="text" name="nev" value="" placeholder="Név" maxlength="255" minlength="5"
         autofocus tabindex="1" required></label><br>
-    <label>Jelszó: <br><input type="password" name="pw" value="" placeholder="Jelszó" maxlength="20" minlength="5"
+    <label>Jelszó: <br><input type="password" name="pw" value="" placeholder="Jelszó" maxlength="255" minlength="5"
         tabindex="2" required></label><br>
     <input class="submit" name="login" type="submit" tabindex="3" value="Bejelentkezés"><br>
     <p><a class="LoginLink" href="Register.php">Regisztráció</a></p>

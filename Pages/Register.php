@@ -17,12 +17,12 @@
 <body>
   <a href="../index.php">Főoldal</a>
   <form action="../FormHandlers/RegisterHandler.php" method="post">
-    <label>*Felhasználó Név<br>(Legalább 5 maximum 20 karakter): <br><input type="text" name="nev" value="" placeholder="Név" maxlength="20" minlength="5"
+    <label>*Felhasználó Név <br><input type="text" name="nev" value="" placeholder="Név" maxlength="255" minlength="5"
         autofocus tabindex="1" required>
     </label><br>
     <fieldset>
       <legend>Jelszó</legend>
-      <label>*Jelszó<br>(Legalább 5 maximum 20 karakter): <br><input type="password" name="pw" value="" placeholder="Jelszó" maxlength="20" minlength="5"
+      <label>*Jelszó<br><input type="password" name="pw" value="" placeholder="Jelszó" maxlength="255" minlength="5"
           tabindex="4" required></label><br>
       <label>*Jelszó megerősítése: <br><input type="password" name="Repeatpw" value="" placeholder="Jelszó"
           maxlength="20" minlength="5" tabindex="5" required></label><br>
