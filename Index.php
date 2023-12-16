@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +18,16 @@
 <body>
   <a href="Pages/Login.php">Bejelentkezés</a><br>
   <a href="Pages/Register.php">Regisztráció</a>
+  <?php
+  if (isset($_SESSION["user"]) && $_SESSION["user"]["privilidge"] == 1) {
+    if ($_SESSION["user"]["privilidge"] > 1) {
+      echo "<a href=Pages/NewAccountType.php>Új számlatípus létrehozása</a>";
+      echo "<a href=Pages/BankAccountAndType.php>Számlatípus passziválása/Folyószámla zárolása</a>";
+    }
+    echo "<a href=Pages/NewBankAccount.php>Új folyószámla nyitása</a>";
+    echo "<a href=Pages/NewTransfer.php>Utalás indítása</a>";
+  }
+  ?>
 
 </body>
 

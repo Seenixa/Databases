@@ -1,11 +1,8 @@
-<?php #Új számlanyitáshoz használt űrlap feldolgozásáért felelős file 
+<?php # Ügyfelenként és havi bontásban (év, hónap) kilistázni az ügyfél számláira érkező utalások összegét. #
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $accountType = $_POST["type"];
-
-    if (!isset($_POST["type"])) {
-        die("A létrehozandó számla típusát meg kell adni!");
-    }
+    $userId = $_POST["userId"];
+    $date = $_POST["date"];
 
     try {
         require_once "../Includes/dbh.inc.php";

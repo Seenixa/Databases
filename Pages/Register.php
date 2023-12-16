@@ -1,5 +1,5 @@
 <?php
-#Regisztrációs űrlap.  Név, jelszóx2 titkosítva.#
+#Regisztrációs űrlap.#
 ?>
 <!DOCTYPE html>
 <html class="RegisterLogin" lang="hu">
@@ -16,30 +16,19 @@
 
 <body>
   <a href="../index.php">Főoldal</a>
+
   <form action="../FormHandlers/RegisterHandler.php" method="post">
     <label>*Felhasználó Név <br><input type="text" name="nev" value="" placeholder="Név" maxlength="255" minlength="5"
         autofocus tabindex="1" required>
     </label><br>
-    <fieldset>
-      <legend>Jelszó</legend>
-      <label>*Jelszó<br><input type="password" name="pw" value="" placeholder="Jelszó" maxlength="255" minlength="5"
-          tabindex="4" required></label><br>
-      <label>*Jelszó megerősítése: <br><input type="password" name="Repeatpw" value="" placeholder="Jelszó"
-          maxlength="20" minlength="5" tabindex="5" required></label><br>
-    </fieldset>
-
-    <label for="checkbox1">*Elfogadom a felhasználási feltételeket.</label>
-    <input type="checkbox" id="checkbox1" name="agreement" value="agree" tabindex="7" required> <br>
-    <div><strong>A *-al jelölt mezők kitöltése kötelező!</strong> </div>
-
+    <label>*Jelszó<br><input type="password" name="pw" value="" placeholder="Jelszó" maxlength="255" minlength="5"
+        tabindex="4" required></label><br>
+    <label>*Jelszó megerősítése: <br><input type="password" name="Repeatpw" value="" placeholder="Jelszó"
+        maxlength="255" minlength="5" tabindex="2" required></label><br>
 
     <input class="submit" type="reset" value="Újratöltés">
     <input class="submit" type="submit" name="register" value="Regisztráció">
   </form>
-
-
-
-
 
 </body>
 

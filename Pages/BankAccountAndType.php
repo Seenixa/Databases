@@ -17,10 +17,16 @@
 
 <body>
   <a href="../index.php">Főoldal</a>
-  <form action="../FormHandlers/NewAccountTypeHandler.php" method="post">
-    <label>Számlatípus név: <br><input type="text" name="nev" value="" placeholder="Név" maxlength="255" minlength="1"
+  <form action="../FormHandlers/AccountTypeDisable.php" method="post">
+    <label>Számlatípus azonosítója: <br><input type="number" name="id" value="" placeholder="Azonosító" 
         autofocus tabindex="1" required></label><br>
-    <input class="submit" name="create" type="submit" tabindex="2" value="Létrehozás"><br>
+    <input class="submit" name="deactivate" type="submit" tabindex="2" value="Típus passziválása"><br>
+  </form>
+  <br><br>
+  <form action="../FormHandlers/BankAccountLock.php" method="post">
+    <label>Folyószámla száma: <br><input type="number" name="accountNumber" value="" placeholder="Számlaszám"
+        autofocus tabindex="3" required></label><br>
+    <input class="submit" name="lock" type="submit" tabindex="4" value="Számla zárolása"><br>
   </form>
 </body>
 

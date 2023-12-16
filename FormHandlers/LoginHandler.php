@@ -3,19 +3,6 @@ session_start();
 #A bejelentkezéshez használt űrlap feldolgozásához használt file.
 ?>
 
-<!DOCTYPE html>
-<html class="RegisterLogin" lang="hu">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starcraft | Bejelentkezés</title>
-    <meta name="description" content="Bejelentkezés">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="icon" href="../Images/SCLogo.png">
-</head>
-<body>
   <?php
   $errors = [];
 
@@ -31,11 +18,26 @@ session_start();
     $errors[] = "Meg a jelszót is.<br>";
   }
 
+  if (count($errors) != 0){
+    foreach($errors as $error)
+      echo $error;
+  }
+  try {
+    require_once("../includes/dbh.inc.php");
 
+    $query = "SELECT név FROM felhasználók (felhasználónév, jelszó) VALUES
+    (:username, :pwd, :email);";
+    $stmt = $pdo->prepare($query);
 
-  foreach($errors as $error)
-  echo $error;
+    $stmt->bindParam(":név", $_POST["nev"]);
+    $stmt->bindParam(":név", $_POST["pw"]);
+
+    $stmt->execute();
+
+    $pdo = null;
+    $stmt = null;
+  
+
+  }
   
   
-  ?>
-</body>

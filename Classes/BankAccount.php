@@ -2,7 +2,6 @@
 
 class BankAccount{
     public $accountNumber;
-    public $ownerName;
     public $isItLocked;
     private $balance;
     public $openDate;
