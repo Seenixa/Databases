@@ -8,8 +8,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Starcraft | Regisztráció</title>
-  <meta name="description" content="Regisztráció">
+  <title>Bank | Főoldal</title>
+  <meta name="description" content="Főoldal">
   <link rel="stylesheet" href="../CSS/style.css">
   <link rel="icon" href="../Logo/Logo.jpg">
 </head>
@@ -22,9 +22,9 @@
         autofocus tabindex="1" required>
     </label><br>
     <label>*Jelszó<br><input type="password" name="pw" value="" placeholder="Jelszó" maxlength="255" minlength="5"
-        tabindex="4" required></label><br>
+        tabindex="2" required></label><br>
     <label>*Jelszó megerősítése: <br><input type="password" name="Repeatpw" value="" placeholder="Jelszó"
-        maxlength="255" minlength="5" tabindex="2" required></label><br>
+        maxlength="255" minlength="5" tabindex="3" required></label><br>
 
     <input class="submit" type="reset" value="Újratöltés">
     <input class="submit" type="submit" name="register" value="Regisztráció">

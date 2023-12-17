@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     die("Az összeget meg kell adni!");
   }
 
-  if (!isset($_POST["date"])) {
+  if (!isset($_POST["deadline"])) {
     die("A teljesítési határidőt meg kell adni!");
   }
 
@@ -21,30 +21,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $deadline = $_POST["deadline"];
   $targetAccount = $_POST["target"];
   $accountFrom = $_POST["from"];
-  $userId = $_SESSION["user"]["azonosító"];
+  $userId = 1000;
 
   try {
     require_once "../Includes/dbh.inc.php";
 
     $query = "INSERT INTO utalások (összeg, teljesítési_határidő, cél_számlaszám, forrás_számlaszám, ki_kezdeményezte) VALUES
-      (:összeg, :teljesítési_határidő, :cél_számlaszám, :forrás_számlaszám, :ki_kezdeményezte);";
+      (?, ?, ?, ?, ?);";
 
     $stmt = $pdo->prepare($query);
 
-    $stmt->bindParam(":összeg", $amount);
-    $stmt->bindParam(":teljesítési_határidő", $deadline);
-    $stmt->bindParam(":cél_számlaszám", $targetAccount);
-    $stmt->bindParam(":forrás_számlaszám", $accountFrom);
-    $stmt->bindParam(":ki_kezdeményezte", $userId);
-
-    $stmt->execute();
+    $stmt->execute([$amount, $deadline, $targetAccount, $accountFrom, $userId]);
 
     $pdo = null;
     $stmt = null;
 
-    header("Location: ../index.php");
-
-    die("Sikeres utalás kezdeményezés!");
+    die("Sikeres utalás kezdeményezés! Vissza a főoldalra -> <a href=../index.php>Főoldal</a>");
 
   } catch (PDOException $e) {
     die("Query failed: " . $e->getMessage());

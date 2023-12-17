@@ -7,8 +7,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Starcraft | Regisztráció</title>
-  <meta name="description" content="Regisztráció">
+  <title>Bank | Főoldal</title>
+  <meta name="description" content="Főoldal">
   <link rel="stylesheet" href="../CSS/style.css">
   <link rel="icon" href="../Logo/Logo.jpg">
 </head>
@@ -17,9 +17,9 @@
   <a href="../index.php">Főoldal</a>
   <form action="../FormHandlers/TransferStartedByHandler.php" method="post">
     <label>Felhasználó azonosítója: <br><input type="number" name="userId" value="" placeholder="Felhasználó azonosító" maxlength="255" minlength="1"
-        autofocus tabindex="1" required></label><br>
-    <label>Utalás határidejének dátuma(éééé-hh-nn): <br><input type="date" name="date" value="" placeholder="dátum"
-        autofocus tabindex="2" required></label><br>
+        autofocus tabindex="1"></label><br>
+    <label>Utalás határidejének éve: <br><input type="number" name="year" value="" placeholder="év"
+        autofocus tabindex="2"></label><br>
     <input class="submit" name="List" type="submit" tabindex="3" value="Utalások listázása."><br>
   </form>
 </body>

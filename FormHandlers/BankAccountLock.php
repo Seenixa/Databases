@@ -7,24 +7,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     $accountNumber = $_POST["accountNumber"];
-    $status = TRUE;
+
 
     try {
         require_once "../Includes/dbh.inc.php";
 
-        $query = "UPDATE folyószámlák SET zárolva = ':status'; WHERE számlaszám == $accountNumber;";
+        $query = "UPDATE folyószámlák SET zárolva = 1 WHERE számlaszám = $accountNumber;";
 
         $stmt = $pdo->prepare($query);
 
-        $stmt->bindParam(":status", $status);
         $stmt->execute();
 
         $pdo = null;
         $stmt = null;
 
-        header("Location: ../index.php");
-
-        die("A folyószámla sikeresen zárolva.");
+        die("A folyószámla sikeresen zárolva. Vissza a főoldalra -> <a href=../index.php>Főoldal</a>");
 
 
     } catch (PDOException $e) {

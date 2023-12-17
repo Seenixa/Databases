@@ -12,19 +12,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         require_once "../Includes/dbh.inc.php";
 
-        $query = "UPDATE számlatípusok SET állapot = ':status'; WHERE azonosító == $id;";
+        $query = "UPDATE számlatípusok SET állapot = ? WHERE azonosító = $id;";
 
         $stmt = $pdo->prepare($query);
 
-        $stmt->bindParam(":status", $status);
-        $stmt->execute();
+        $stmt->execute([$status]);
 
         $pdo = null;
         $stmt = null;
 
-        header("Location: ../index.php");
-
-        die("A számlatípus sikeresen passzíválva.");
+        die("A számlatípus sikeresen passzíválva. Vissza a főoldalra -> <a href=../index.php>Főoldal</a>");
 
 
     } catch (PDOException $e) {

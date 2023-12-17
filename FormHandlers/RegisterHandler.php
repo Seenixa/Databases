@@ -23,21 +23,18 @@
       require_once "../Includes/dbh.inc.php";
 
       $query = "INSERT INTO felhasználók (név, jelszó) VALUES
-      (:név, :jelszó);";
+      (?, ?);";
 
       $stmt = $pdo->prepare($query);
 
-      $stmt->bindParam(":név", $username);
-      $stmt->bindParam(":jelszó", $password);
 
-      $stmt->execute();
+
+      $stmt->execute([$username, $password]);
 
       $pdo = null;
       $stmt = null;
 
-      header("Location: ../index.php");
-
-      die();
+      die("Sikeres regisztáció. Vissza a főoldalra -> <a href=../index.php>Főoldal</a>");
 
     } catch (PDOException $e) {
       die("Query failed: " . $e->getMessage());

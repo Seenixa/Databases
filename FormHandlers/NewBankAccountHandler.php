@@ -10,21 +10,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         require_once "../Includes/dbh.inc.php";
 
-        $query = "INSERT INTO folyószámlák (típus) VALUES
-      (:típus);";
+        $query = "INSERT INTO folyószámlák (típus_azonosító) VALUES
+      (?);";
 
         $stmt = $pdo->prepare($query);
-
-        $stmt->bindParam(":típus", $accountTypeName);
-
-        $stmt->execute();
+        $stmt->execute([$accountType]);
 
         $pdo = null;
         $stmt = null;
 
-        header("Location: ../index.php");
 
-        die("Sikeres bankszámla nyitás!");
+        die("Sikeres bankszámla nyitás! Vissza a főoldalra -> <a href=../index.php>Főoldal</a>");
 
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
