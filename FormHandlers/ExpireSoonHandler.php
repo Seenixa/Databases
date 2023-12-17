@@ -6,7 +6,7 @@
         require_once "../Includes/dbh.inc.php";
 
         $query = "SELECT felhasználók.név AS 'Felhasználó', 
-        COUNT(folyószámlák.számlaszám) AS 'darab'
+        COUNT(folyószámlák.számlaszám)
         FROM felhasználók
         JOIN kinek_a_számlája ON felhasználók.azonosító = kinek_a_számlája.felhasználó_azonosító
         JOIN folyószámlák ON folyószámlák.számlaszám = kinek_a_számlája.folyószámla_számlaszám

@@ -1,5 +1,5 @@
 <?php
-#A banki alkalmazottak itt hozhatnak létre új számlatípust. Név, mettől, meddig, állapot#
+#Itt lehet passziválni számlatípust, vagy zárolni folyószámlát.#
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +18,13 @@
 <body>
   <a href="../index.php">Főoldal</a>
   <form action="../FormHandlers/AccountTypeDisable.php" method="post">
-    <label>Számlatípus azonosítója: <br><input type="number" name="id" value="" placeholder="Azonosító" 
+    <label>Passziválni kívánt számlatípus azonosítója: <br><input type="number" name="id" value="" placeholder="Azonosító" 
         autofocus tabindex="1" required></label><br>
     <input class="submit" name="deactivate" type="submit" tabindex="2" value="Típus passziválása"><br>
   </form>
   <br><br>
   <form action="../FormHandlers/BankAccountLock.php" method="post">
-    <label>Folyószámla száma: <br><input type="number" name="accountNumber" value="" placeholder="Számlaszám"
+    <label>Zárolni kívánt folyószámla száma: <br><input type="number" name="accountNumber" value="" placeholder="Számlaszám"
         autofocus tabindex="3" required></label><br>
     <input class="submit" name="lock" type="submit" tabindex="4" value="Számla zárolása"><br>
   </form>

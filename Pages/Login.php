@@ -1,5 +1,6 @@
 <?php #Bejelentkezés űrlap. Azonosító + Jelszó. ?>
 
+
 <!DOCTYPE html>
 <html class="RegisterLogin" lang="hu">
 

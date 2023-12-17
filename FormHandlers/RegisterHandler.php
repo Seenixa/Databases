@@ -26,9 +26,6 @@
       (?, ?);";
 
       $stmt = $pdo->prepare($query);
-
-
-
       $stmt->execute([$username, $password]);
 
       $pdo = null;
@@ -43,5 +40,6 @@
 
   } else {
     header("Location: ../index.php");
+    die();
   }
  

@@ -18,7 +18,7 @@
 <body>
   <a href="../index.php">Főoldal</a>
   <form action="../FormHandlers/NewAccountTypeHandler.php" method="post">
-    <label>Számlatípus név: <br><input type="text" name="nev" value="" placeholder="Név" maxlength="255" minlength="1"
+    <label>Új számlatípus neve: <br><input type="text" name="nev" value="" placeholder="Név" maxlength="255" minlength="1"
         autofocus tabindex="1" required></label><br>
     <input class="submit" name="create" type="submit" tabindex="2" value="Létrehozás"><br>
   </form>
